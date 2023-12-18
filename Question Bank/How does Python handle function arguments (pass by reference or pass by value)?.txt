@@ -1,0 +1,56 @@
+In Python, the mechanism for passing arguments to functions is neither purely pass by reference nor pass by value. 
+Instead, it is often described as "pass by object reference" or "pass by assignment." To understand how Python handles function arguments, 
+it's essential to distinguish between mutable and immutable objects.
+
+1. **Immutable Objects (e.g., integers, floats, strings, tuples):**
+   - When an immutable object is passed as an argument to a function, the function receives a copy of the value, 
+   and any modifications made to the parameter within the function do not affect the original object.
+
+   ```python
+   def modify_immutable(value):
+       value += 1
+       print("Inside function:", value)
+
+   x = 5
+   modify_immutable(x)
+   print("Outside function:", x)
+   ```
+
+   Output:
+   ```
+   Inside function: 6
+   Outside function: 5
+   ```
+
+   In this example, the value of `x` is not modified outside the function.
+
+2. **Mutable Objects (e.g., lists, dictionaries, sets):**
+   - When a mutable object is passed as an argument to a function, the function receives a reference to the original object. 
+   Any modifications made to the parameter within the function are reflected in the original object.
+
+   ```python
+   def modify_mutable(my_list):
+       my_list.append(4)
+       print("Inside function:", my_list)
+
+   my_numbers = [1, 2, 3]
+   modify_mutable(my_numbers)
+   print("Outside function:", my_numbers)
+   ```
+
+   Output:
+   ```
+   Inside function: [1, 2, 3, 4]
+   Outside function: [1, 2, 3, 4]
+   ```
+
+   In this example, the list `my_numbers` is modified outside the function.
+
+In summary, Python is neither strictly pass by reference nor pass by value. It passes references to objects, 
+and the behavior depends on whether the object is mutable or immutable:
+
+- Immutable objects: Changes within the function do not affect the original object.
+- Mutable objects: Changes within the function are reflected in the original object.
+
+Understanding this distinction is important for writing Python code that behaves as expected when passing arguments to functions. 
+It's also crucial to be aware that modifications to mutable objects inside a function can lead to unexpected side effects, so it's important to design functions accordingly.

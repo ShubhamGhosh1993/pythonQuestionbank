@@ -1,0 +1,51 @@
+In Python scripts, the `__main__` block plays a specific role when the script is executed. 
+The `__main__` block is used to determine whether a Python script is being run as the main program or if it is being imported as a module into another script.
+
+The `__main__` block is defined using the following idiom:
+
+```python
+if __name__ == "__main__":
+    # Code to be executed when the script is run
+```
+
+Here's an explanation of its purpose:
+
+1. **Script Execution vs. Module Import:**
+   - When a Python script is executed, the interpreter assigns the special variable `__name__` a value of `"__main__"`. 
+   This allows you to check whether the script is being run as the main program or if it is being imported as a module into another script.
+
+2. **Conditional Execution:**
+   - The `if __name__ == "__main__":` block provides a way to conditionally execute certain code only when the script is run directly, 
+   not when it is imported as a module. This is useful for defining code that should only run when the script is intended to be the main program.
+
+   ```python
+   # Example script: my_script.py
+
+   def some_function():
+       print("This function can be used when the script is imported.")
+
+   if __name__ == "__main__":
+       print("This code runs only when the script is executed directly.")
+   ```
+
+   In this example, the `some_function()` can be used when the script is imported, but the `print("This code runs only when the script is executed directly.")` 
+   statement will be executed only when the script is run as the main program.
+
+3. **Avoiding Unintended Execution:**
+   - When you import a Python script as a module, you might not want certain parts of the code to be executed automatically. 
+   The `__main__` block allows you to include code that will be executed only when the script is intended to be the main program.
+
+   ```python
+   # Example module: my_module.py
+
+   def some_function():
+       print("This function can be used when the module is imported.")
+
+   if __name__ == "__main__":
+       print("This code won't run when the module is imported.")
+   ```
+
+   If you import `my_module.py` into another script, the code within the `if __name__ == "__main__":` block won't be executed automatically.
+
+In summary, the `__main__` block is a convenient way to structure your Python scripts so that certain code is executed only when the script is run directly and not when it is imported as a module. 
+This helps in keeping your code modular and reusable.

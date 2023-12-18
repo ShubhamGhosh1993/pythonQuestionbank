@@ -1,0 +1,88 @@
+Certainly! Below are simple implementations of a stack and a queue in Python.
+
+### Stack Implementation:
+
+```python
+class Stack:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def push(self, item):
+        self.items.append(item)
+
+    def pop(self):
+        if not self.is_empty():
+            return self.items.pop()
+        else:
+            raise IndexError("pop from an empty stack")
+
+    def peek(self):
+        if not self.is_empty():
+            return self.items[-1]
+        else:
+            raise IndexError("peek from an empty stack")
+
+    def size(self):
+        return len(self.items)
+
+# Example usage of Stack
+stack = Stack()
+stack.push(1)
+stack.push(2)
+stack.push(3)
+
+print("Stack:", stack.items)
+print("Pop:", stack.pop())
+print("Peek:", stack.peek())
+print("Size:", stack.size())
+```
+
+### Queue Implementation:
+
+```python
+class Queue:
+    def __init__(self):
+        self.items = []
+
+    def is_empty(self):
+        return len(self.items) == 0
+
+    def enqueue(self, item):
+        self.items.append(item)
+
+    def dequeue(self):
+        if not self.is_empty():
+            return self.items.pop(0)
+        else:
+            raise IndexError("dequeue from an empty queue")
+
+    def front(self):
+        if not self.is_empty():
+            return self.items[0]
+        else:
+            raise IndexError("front from an empty queue")
+
+    def size(self):
+        return len(self.items)
+
+# Example usage of Queue
+queue = Queue()
+queue.enqueue(1)
+queue.enqueue(2)
+queue.enqueue(3)
+
+print("Queue:", queue.items)
+print("Dequeue:", queue.dequeue())
+print("Front:", queue.front())
+print("Size:", queue.size())
+```
+
+These implementations provide basic functionality for a stack and a queue. 
+The `Stack` class supports `push`, `pop`, `peek`, `is_empty`, and `size` operations, while the `Queue` class supports `enqueue`, 
+`dequeue`, `front`, `is_empty`, and `size` operations.
+
+Remember that Python has built-in data structures (`list` for a stack, and `collections.deque` for a queue) that can be used in most cases. 
+The custom implementations are educational and might be useful in scenarios where more specific behavior or customization is required.
