@@ -1,0 +1,88 @@
+Python 2 and Python 3 are two major versions of the Python programming language. Python 3 was introduced to address some design issues in Python 2 and to introduce new features. Here are some key differences between Python 2 and Python 3:
+
+1. **Print Statement vs. Print Function:**
+- **Python 2:** Uses the `print` statement without parentheses.
+- **Python 3:** Uses the `print()` function, requiring parentheses.
+
+```python
+# Python 2
+print "Hello, World!"
+
+# Python 3
+print("Hello, World!")
+```
+
+2. **Division:**
+- **Python 2:** Division between two integers results in integer division unless one of the operands is a float.
+- **Python 3:** Division between two integers always results in a float.
+
+```python
+# Python 2
+result = 5 / 2 # result is 2
+
+# Python 3
+result = 5 / 2 # result is 2.5
+```
+
+3. **Unicode Support:**
+- **Python 2:** Strings are ASCII by default, and Unicode is handled using the `u'...'` syntax.
+- **Python 3:** Strings are Unicode by default.
+
+```python
+# Python 2
+string = u'Hello, World!'
+
+# Python 3
+string = 'Hello, World!'
+```
+
+4. **`xrange` vs. `range`:**
+- **Python 2:** `xrange()` returns an iterator, while `range()` creates a list.
+- **Python 3:** `range()` returns an iterator, and `xrange()` no longer exists.
+
+```python
+# Python 2
+for i in xrange(5):
+print(i)
+
+# Python 3
+for i in range(5):
+print(i)
+```
+
+5. **Error Handling:**
+- **Python 2:** Uses `except Exception, e` syntax for handling exceptions.
+- **Python 3:** Uses `except Exception as e` syntax.
+
+```python
+# Python 2
+try:
+# some code
+except Exception, e:
+# handle exception
+
+# Python 3
+try:
+# some code
+except Exception as e:
+# handle exception
+```
+
+6. **`input()` vs. `raw_input()`:**
+- **Python 2:** `input()` evaluates user input as code, and `raw_input()` returns a string.
+- **Python 3:** `input()` returns a string, and `raw_input()` no longer exists.
+
+```python
+# Python 2
+name = raw_input("Enter your name: ")
+
+# Python 3
+name = input("Enter your name: ")
+```
+
+7. **Library Changes:**
+- Some libraries and modules have been updated or replaced between Python 2 and Python 3, which may require modifications to code when migrating.
+
+It's important to note that Python 2 reached its end of life on January 1, 2020. This means that it no longer receives official support or updates. 
+It is recommended to use Python 3 for all new projects and to migrate existing Python 2 codebases to Python 3. 
+Many popular third-party libraries and frameworks have also transitioned to Python 3.
