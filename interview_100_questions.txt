@@ -1,0 +1,676 @@
+1. Key features is python?
+    Ans :
+    1. Open-source and free.
+    2. OOPs.
+    3. Easy and clear syntax.
+    4. Easy to interpret and debugging.
+    5. Easy to integrate with other languages like C++, Java, etc.
+
+2. Keywords in python?
+    Ans: 
+    False, def,	if,	raise
+    None, del, import, 	return
+    True, elif, in, try
+    and, else, is, while
+    as 	except 	lambda 	with
+    assert 	finally 	nonlocal 	yield
+    break 	for 	not 	
+    class 	from 	or 	
+    continue 	global 	pass
+
+3. What are literals?
+    Ans:
+    In Python, literals are notations that represent fixed values in your source code. 
+    They are used to express particular values within the code. Here are some common types of literals in Python:
+
+    1. **Numeric Literals:**
+    - **Integer literals:** Whole numbers without a decimal point. Example: `42`.
+    - **Float literals:** Numbers with a decimal point or in scientific notation. Example: `3.14` or `2e3`.
+
+    ```python
+    integer_literal = 42
+    float_literal = 3.14
+    ```
+
+    2. **String Literals:**
+    - **Single-quoted strings:** Enclosed in single quotes. Example: `'hello'`.
+    - **Double-quoted strings:** Enclosed in double quotes. Example: `"world"`.
+    - **Triple-quoted strings:** Enclosed in triple single or double quotes, useful for multiline strings. Example: `'''This is a multiline
+        string'''`.
+
+    ```python
+    single_quoted = 'hello'
+    double_quoted = "world"
+    multiline = '''This is a
+    multiline string.'''
+    ```
+
+    3. **Boolean Literals:**
+    - `True` and `False` represent boolean values.
+
+    ```python
+    is_true = True
+    is_false = False
+    ```
+
+    4. **None Literal:**
+    - The `None` keyword represents the absence of a value or a null value.
+
+    ```python
+    no_value = None
+    ```
+
+    5. **List Literals:**
+    - Lists are created using square brackets.
+
+    ```python
+    my_list = [1, 2, 3, 4]
+    ```
+
+    6. **Tuple Literals:**
+    - Tuples are created using parentheses.
+
+    ```python
+    my_tuple = (1, 2, 3, 4)
+    ```
+
+    7. **Set Literals:**
+    - Sets are created using curly braces.
+
+    ```python
+    my_set = {1, 2, 3, 4}
+    ```
+
+    8. **Dictionary Literals:**
+    - Dictionaries are created using curly braces with key-value pairs.
+
+    ```python
+    my_dict = {'a': 1, 'b': 2, 'c': 3}
+    ```
+
+    9. **Binary Literals:**
+    - Represented by the prefix `0b` or `0B` followed by binary digits.
+
+    ```python
+    binary_number = 0b1010
+    ```
+
+    10. **Octal Literals:**
+        - Represented by the prefix `0o` or `0O` followed by octal digits.
+
+        ```python
+        octal_number = 0o777
+        ```
+
+    11. **Hexadecimal Literals:**
+        - Represented by the prefix `0x` or `0X` followed by hexadecimal digits.
+
+        ```python
+        hex_number = 0xFF
+    ```
+
+4. How to concate two tuples?
+    Ans:
+    t1=(5,2.3, "Shubham")
+    t2 = ("saksjak", 56, 89)
+    t3=t1+t2
+
+5. Functions in python.
+    Ans:
+    Functions in Python are blocks of reusable code that perform a specific task. They are defined using the `def` keyword, 
+    followed by the function name, parameters (if any), a colon, and the function body. Here is a basic structure of a function in Python:
+
+    ```python
+    def function_name(parameter1, parameter2, ...):
+        # Function body
+        # Code to perform the task
+        # Optional: Return statement
+        return result  # optional, not required in all functions
+    ```
+
+    Let's break down the components:
+    - **Function Name:** A name that identifies the function. It should follow the same rules as variable names.
+    - **Parameters:** Input values that the function accepts. These are optional; a function can take zero or more parameters.
+    - **Function Body:** The code block that performs the specific task of the function. It is indented under the `def` statement.
+    - **Return Statement:** An optional statement used to return a value from the function back to the caller. 
+    If a function does not have a `return` statement, it implicitly returns `None`.
+
+    Here's an example of a simple function:
+
+    ```python
+    def greet(name):
+        """This function greets the person passed in as a parameter."""
+        print(f"Hello, {name}!")
+
+    # Calling the function
+    greet("Alice")
+    ```
+
+    In this example:
+
+    - `greet` is the function name.
+    - `(name)` is the parameter the function accepts.
+    - The function body is indented and contains a `print` statement.
+    - The function is called with `greet("Alice")`, passing `"Alice"` as the argument.
+
+    ### Return Values:
+
+    A function can return a value using the `return` statement. Here's an example:
+
+    ```python
+    def add_numbers(a, b):
+        """This function adds two numbers and returns the result."""
+        sum_result = a + b
+        return sum_result
+
+    # Calling the function and storing the result
+    result = add_numbers(3, 4)
+    print(result)  # Output: 7
+    ```
+
+    ### Default Parameters:
+
+    You can provide default values for parameters, making them optional when calling the function:
+
+    ```python
+    def power(base, exponent=2):
+        """This function calculates the power of a number with an optional exponent."""
+        result = base ** exponent
+        return result
+
+    # Calling the function with and without the exponent
+    print(power(2))       # Output: 4 (default exponent is 2)
+    print(power(2, 3))    # Output: 8 (exponent provided as 3)
+    ```
+
+    ### Arbitrary Number of Arguments:
+
+    You can use `*args` to allow a function to accept any number of positional arguments:
+
+    ```python
+    def sum_all(*args):
+        """This function sums all the arguments provided."""
+        return sum(args)
+
+    # Calling the function with different numbers of arguments
+    print(sum_all(1, 2, 3))         # Output: 6
+    print(sum_all(1, 2, 3, 4, 5))    # Output: 15
+    ```
+
+    ### Keyword Arguments:
+
+    You can use `**kwargs` to accept any number of keyword arguments:
+
+    ```python
+    def print_info(**kwargs):
+        """This function prints key-value pairs provided as keyword arguments."""
+        for key, value in kwargs.items():
+            print(f"{key}: {value}")
+
+    # Calling the function with different keyword arguments
+    print_info(name="Alice", age=25, city="Wonderland")
+    ```
+
+    These are some fundamental aspects of functions in Python. 
+    Understanding these concepts will allow you to define and use functions effectively in your Python programs.
+
+6. How can you create 5*5 numpy array in python with zeros only.
+    Ans:
+    import numpy as np
+    np.zeros()
+
+7. What are pandas?
+    Ans:
+    Open source library. Handles a large variety of data. Data stuctures it supports are Series and Dataframes
+
+8. What are Dataframes?
+    Ans:
+    In Python, DataFrames are a core data structure provided by the pandas library. 
+    Pandas is a powerful and widely-used library for data manipulation and analysis. 
+    A DataFrame is essentially a two-dimensional, labeled data structure with columns that can be of different types (e.g., integers, strings, floating-point numbers). 
+    It is similar to a spreadsheet or SQL table.
+
+    Here's a basic introduction to working with DataFrames using pandas:
+
+    ### Importing pandas:
+
+    ```python
+    import pandas as pd
+    ```
+
+    ### Creating a DataFrame:
+
+    There are various ways to create a DataFrame. One common way is to create it from a dictionary:
+
+    ```python
+    data = {'Name': ['Alice', 'Bob', 'Charlie'],
+            'Age': [25, 30, 35],
+            'City': ['City1', 'City2', 'City3']}
+
+    df = pd.DataFrame(data)
+    print(df)
+    ```
+
+    This will produce a DataFrame like:
+
+    ```
+        Name  Age   City
+    0  Alice   25  City1
+    1    Bob   30  City2
+    2 Charlie   35  City3
+    ```
+
+    ### Reading from External Sources:
+
+    Pandas can read data from various sources like CSV, Excel, SQL databases, etc. For example, reading from a CSV file:
+
+    ```python
+    df = pd.read_csv('your_file.csv')
+    ```
+
+    ### Basic DataFrame Operations:
+
+    #### Viewing Data:
+
+    ```python
+    # Display the first few rows
+    print(df.head())
+
+    # Display basic information about the DataFrame
+    print(df.info())
+
+    # Display statistical summary of the data
+    print(df.describe())
+    ```
+
+    #### Accessing Columns:
+
+    ```python
+    # Accessing a single column
+    print(df['Name'])
+
+    # Accessing multiple columns
+    print(df[['Name', 'Age']])
+    ```
+
+    #### Indexing and Slicing:
+
+    ```python
+    # Selecting rows by index
+    print(df.loc[0])  # Access the first row
+
+    # Slicing rows
+    print(df[1:3])  # Access rows 1 to 2
+    ```
+
+    #### Filtering Data:
+
+    ```python
+    # Filtering based on a condition
+    print(df[df['Age'] > 30])
+    ```
+
+    ### Modifying DataFrames:
+
+    #### Adding a Column:
+
+    ```python
+    df['NewColumn'] = [10, 20, 30]
+    ```
+
+    #### Dropping a Column:
+
+    ```python
+    df = df.drop('NewColumn', axis=1)
+    ```
+
+    #### Changing Values:
+
+    ```python
+    # Changing a specific value
+    df.at[0, 'Age'] = 26
+
+    # Changing values based on a condition
+    df.loc[df['Age'] > 30, 'Age'] = 40
+    ```
+
+    #### Handling Missing Data:
+
+    ```python
+    # Checking for missing values
+    print(df.isnull())
+
+    # Dropping rows with missing values
+    df = df.dropna()
+
+    # Filling missing values with a specific value
+    df = df.fillna(0)
+    ```
+
+    ### Advanced Operations:
+
+    #### Grouping and Aggregation:
+
+    ```python
+    # Grouping by a column and calculating mean
+    grouped_data = df.groupby('City')['Age'].mean()
+    print(grouped_data)
+    ```
+
+    #### Merging DataFrames:
+
+    ```python
+    df1 = pd.DataFrame({'key': ['A', 'B', 'C'], 'value': [1, 2, 3]})
+    df2 = pd.DataFrame({'key': ['A', 'B', 'D'], 'value': [4, 5, 6]})
+
+    merged_df = pd.merge(df1, df2, on='key', how='inner')
+    print(merged_df)
+    ```
+
+    #### Reshaping Data:
+
+    ```python
+    # Pivot table
+    pivot_table = df.pivot_table(values='Age', index='City', columns='Name', aggfunc='mean')
+    print(pivot_table)
+    ```
+
+    These are just some basic examples to get you started with pandas and DataFrames. Pandas provides a wide range of functions and methods for data manipulation, 
+    cleaning, and analysis. 
+    For more detailed information, you may refer to the [official pandas documentation](https://pandas.pydata.org/pandas-docs/stable/index.html).
+
+9. What are pandas series?
+    Ans:
+    In pandas, a `Series` is a one-dimensional labeled array capable of holding any data type. 
+    It is a fundamental data structure in pandas and is similar to a column in a spreadsheet or a single-column table in a database. 
+    A Series can be created from a variety of data types, including lists, NumPy arrays, or even other Series.
+
+    Here's a basic introduction to pandas Series:
+
+    ### Creating a Series:
+
+    You can create a Series using the `pd.Series()` constructor. For example:
+
+    ```python
+    import pandas as pd
+
+    # Creating a Series from a list
+    data = [1, 3, 5, 7, 9]
+    series = pd.Series(data)
+
+    print(series)
+    ```
+
+    This will output:
+
+    ```
+    0    1
+    1    3
+    2    5
+    3    7
+    4    9
+    dtype: int64
+    ```
+
+    ### Key Characteristics of a Series:
+
+    1. **Index:** By default, pandas assigns an index to each element in the Series. In the example above, the index is 0, 1, 2, 3, and 4.
+
+    2. **Data Type:** A Series can hold elements of different data types, but all elements within a single Series must be of the same type. In the example, the data type is `int64`.
+
+    ### Accessing Elements in a Series:
+
+    You can access elements in a Series using the index. For example:
+
+    ```python
+    # Accessing a single element
+    print(series[2])  # Output: 5
+
+    # Slicing the Series
+    print(series[1:4])
+    ```
+
+    ### Giving Custom Index:
+
+    You can also provide a custom index when creating a Series:
+
+    ```python
+    custom_index = ['a', 'b', 'c', 'd', 'e']
+    series_with_custom_index = pd.Series(data, index=custom_index)
+
+    print(series_with_custom_index)
+    ```
+
+    This will output:
+
+    ```
+    a    1
+    b    3
+    c    5
+    d    7
+    e    9
+    dtype: int64
+    ```
+
+    ### Operations on Series:
+
+    You can perform various operations on Series, such as arithmetic operations, element-wise operations, and more:
+
+    ```python
+    # Arithmetic operations
+    result = series * 2
+    print(result)
+    ```
+
+    This will output:
+
+    ```
+    0     2
+    1     6
+    2    10
+    3    14
+    4    18
+    dtype: int64
+    ```
+
+    ### Name Attribute:
+
+    A Series can have a name, which can be assigned when creating the Series or later:
+
+    ```python
+    series_with_name = pd.Series(data, name='MySeries')
+    print(series_with_name)
+    ```
+
+    ### Summary:
+
+    In summary, a pandas Series is a powerful and flexible data structure that provides labeled, one-dimensional data. 
+    It's commonly used for representing columns in a DataFrame, and many operations that can be performed on a DataFrame can also be performed on a Series. 
+    Understanding how to work with Series is fundamental to using pandas for data analysis and manipulation.
+
+10. What is pandas groupby() function?
+    Ans:
+    The `groupby` function in pandas is a powerful and flexible tool that allows you to split a DataFrame into groups based on one or more criteria, 
+    apply a function to each group independently, and then combine the results back into a DataFrame. This process is often referred to as "split-apply-combine."
+
+    Here's a basic overview of how the `groupby` function works:
+
+    ### Syntax:
+
+    ```python
+    grouped = df.groupby(by, axis=0, level=None, as_index=True, sort=True, group_keys=True, squeeze=False, observed=False, **kwargs)
+    ```
+
+    - **`by`**: This is the key or keys to group by. It can be a single column name, a list of column names, or a callable function.
+    - **`axis`**: The axis to group along. By default, it's 0, meaning it groups along rows.
+    - **`as_index`**: If True, the group labels will be used as the index in the resulting DataFrame.
+    - **`sort`**: Whether to sort the result by the group labels.
+    - **`group_keys`**: If True, the group keys will be included in the resulting object.
+    - **`squeeze`**: If the grouped result is a single group, return as a Series.
+    - **`observed`**: This is only relevant for categorical data, and if True, will show only observed values for categorical groupers.
+
+    ### Example:
+
+    Let's consider a simple DataFrame:
+
+    ```python
+    import pandas as pd
+
+    data = {
+        'City': ['A', 'B', 'A', 'B', 'A', 'B'],
+        'Value': [10, 20, 15, 25, 12, 18],
+        'Category': ['X', 'Y', 'X', 'Y', 'X', 'Y']
+    }
+
+    df = pd.DataFrame(data)
+    ```
+
+    Now, let's group this DataFrame by the 'City' column and calculate the mean for each group:
+
+    ```python
+    grouped_by_city = df.groupby('City')
+
+    # Calculate the mean for each group
+    mean_values = grouped_by_city.mean()
+
+    print(mean_values)
+    ```
+
+    This will output:
+
+    ```
+        Value
+    City       
+    A      12.333333
+    B      21.000000
+    ```
+
+    ### Applying Functions:
+
+    You can apply various functions to each group using the `agg` method. For example, calculating both the mean and the sum for each group:
+
+    ```python
+    result = grouped_by_city.agg(['mean', 'sum'])
+
+    print(result)
+    ```
+
+    This will output:
+
+    ```
+            Value    
+            mean sum
+    City              
+    A     12.333333  37
+    B     21.000000  63
+    ```
+
+    ### Grouping by Multiple Columns:
+
+    You can group by multiple columns by passing a list of column names to the `by` parameter:
+
+    ```python
+    grouped_by_city_category = df.groupby(['City', 'Category'])
+
+    # Calculate the sum for each group
+    sum_values = grouped_by_city_category.sum()
+
+    print(sum_values)
+    ```
+
+    This will output:
+
+    ```
+            Value
+    City Category     
+    A    X         37
+        Y         12
+    B    X         15
+        Y         43
+    ```
+
+    The `groupby` function is a versatile tool for exploring and summarizing data based on different criteria. 
+    It is commonly used in data analysis and plays a crucial role in the pandas library.
+
+11. How to create DataFrame from list?
+    Ans:
+    Creating a DataFrame from a list can be done using the `pd.DataFrame()` constructor from the pandas library. Here's an example:
+
+    ```python
+    import pandas as pd
+
+    # Sample data in the form of lists
+    data = [['Alice', 25, 'City1'],
+            ['Bob', 30, 'City2'],
+            ['Charlie', 35, 'City3']]
+
+    # Column names
+    columns = ['Name', 'Age', 'City']
+
+    # Creating a DataFrame
+    df = pd.DataFrame(data, columns=columns)
+
+    # Displaying the DataFrame
+    print(df)
+    ```
+
+    In this example:
+
+    - `data` is a list of lists, where each inner list represents a row of data.
+    - `columns` is a list specifying the column names for the DataFrame.
+    - The `pd.DataFrame()` constructor is used to create the DataFrame, passing `data` and `columns` as arguments.
+
+    The resulting DataFrame will look like:
+
+    ```
+        Name  Age   City
+    0    Alice   25  City1
+    1      Bob   30  City2
+    2  Charlie   35  City3
+    ```
+
+    This is a basic example, and you can customize it based on the structure of your data. 
+    If your data is already in a list of dictionaries, you can omit the `columns` parameter, and pandas will use the dictionary keys as column names.
+
+12. How to create DataFrame from dictionary?
+    Ans: Creating a DataFrame from a dictionary in pandas is a straightforward process. Each key-value pair in the dictionary corresponds to a column in the DataFrame. Here's an example:
+
+    ```python
+    import pandas as pd
+
+    # Sample dictionary
+    data = {
+        'Name': ['Alice', 'Bob', 'Charlie'],
+        'Age': [25, 30, 35],
+        'City': ['City1', 'City2', 'City3']
+    }
+
+    # Creating a DataFrame from the dictionary
+    df = pd.DataFrame(data)
+
+    # Displaying the DataFrame
+    print(df)
+    ```
+
+    This will output:
+
+    ```
+        Name  Age   City
+    0    Alice   25  City1
+    1      Bob   30  City2
+    2  Charlie   35  City3
+    ```
+
+    In this example:
+
+    - The keys of the dictionary (`'Name'`, `'Age'`, `'City'`) become the column names in the DataFrame.
+    - The values associated with each key become the data in the corresponding column.
+    - The index (leftmost column with values 0, 1, 2) is automatically generated by pandas.
+
+    You can customize the index, add more columns, or modify the structure of the DataFrame based on your specific needs. 
+    Creating DataFrames from dictionaries is a common and convenient way to work with tabular data in pandas.
+
+13. 
+
+14. 
+

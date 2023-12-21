@@ -1,0 +1,178 @@
+**1. What is Flask?**
+   - Flask is a micro web framework for Python.
+
+**2. Explain the term "micro" in the context of Flask.**
+   - "Micro" in Flask refers to the simplicity and minimalism of the framework. 
+   It provides only the essentials to get a web application up and running.
+
+**3. How to install Flask?**
+   - You can install Flask using the following command: `pip install Flask`.
+
+**4. What is the purpose of the `__init__.py` file in a Flask application directory?**
+   - It indicates that the directory should be treated as a package, allowing you to import modules from it.
+
+**5. How do you create a Flask application?**
+   - You create a Flask application by creating an instance of the `Flask` class. For example: `app = Flask(__name__)`.
+
+**6. Explain the role of the `route` decorator in Flask.**
+   - The `route` decorator is used to bind a function to a URL, defining the route at which the function should be executed.
+
+**7. How to run a Flask application?**
+   - You can run a Flask application using the `run()` method on the Flask object. For example: `app.run()`.
+
+**8. What is Flask-WTF and why is it used?**
+   - Flask-WTF is an extension that integrates Flask with the WTForms library, making it easier to work with web forms in Flask applications.
+
+**9. How can you access request data in Flask?**
+   - You can access request data using the `request` object. For example, `request.form` for form data and `request.args` for query parameters.
+
+**10. Explain the concept of templates in Flask.**
+    - Templates in Flask are used to separate the presentation layer from the business logic. 
+    They are usually written in Jinja2 and allow for dynamic content rendering.
+
+**11. What is the use of the `url_for` function in Flask?**
+    - The `url_for` function generates a URL for a given endpoint, allowing you to build URLs dynamically in your application.
+
+**12. How does Flask support error handling?**
+    - Flask provides error handlers using the `@app.errorhandler` decorator. 
+    For example, `@app.errorhandler(404)` is used to handle 404 errors.
+
+**13. Explain Flask blueprints.**
+    - Blueprints in Flask are a way to organize a group of related views, templates, and static files. 
+    They help in modularizing large applications.
+
+**14. How does Flask support cookies?**
+    - Flask uses the `cookies` attribute of the `request` object to read cookies, and the `set_cookie` method of the `response` object to set cookies.
+
+**15. What is Flask-SQLAlchemy?**
+    - Flask-SQLAlchemy is an extension that integrates SQLAlchemy, a popular SQL toolkit and Object-Relational Mapping (ORM) library, with Flask.
+
+**16. How can you secure a Flask application?**
+    - You can secure a Flask application by using techniques such as setting secure session cookies, validating user input, 
+    using HTTPS, and implementing proper authentication and authorization.
+
+**17. Explain Flask request lifecycle.**
+    - Flask request lifecycle involves the processing of a request, routing it to the appropriate view function, 
+    executing the view function, and generating a response.
+
+**18. What is Flask-Migrate used for?**
+    - Flask-Migrate is an extension that helps manage database migrations when using Flask-SQLAlchemy. 
+    It simplifies the process of applying changes to the database schema.
+
+**19. How can you handle file uploads in Flask?**
+    - File uploads in Flask can be handled using the `request.files` object. 
+    The `secure_filename` function can be used to secure filenames.
+
+**20. What is the Flask-WTF CSRF token used for?**
+    - The Flask-WTF CSRF token is used to protect against Cross-Site Request Forgery (CSRF) attacks. 
+    It ensures that the form data comes from the expected form and not from an unauthorized source.
+
+**21. Explain the use of Flask-RESTful.**
+    - Flask-RESTful is an extension for Flask that simplifies the creation of RESTful APIs by providing abstractions for resource routing and request parsing.
+
+**22. What is the purpose of the `before_request` and `after_request` decorators in Flask?**
+    - The `before_request` decorator is used to execute a function before each request, and the `after_request` decorator is used to execute a function after each request. 
+    They can be used for tasks like setting up database connections or modifying response headers.
+
+**23. How can you use Flask to work with WebSocket connections?**
+    - Flask-SocketIO is an extension that enables Flask applications to handle WebSocket connections, allowing for real-time communication between the server and clients.
+
+**24. Explain Flask's `g` object.**
+    - The `g` object in Flask is a global context variable that can be used to store and share data during a request. 
+    It is often used to pass information between middleware and view functions.
+
+**25. What is Flask-CORS used for?**
+    - Flask-CORS is an extension that simplifies Cross-Origin Resource Sharing (CORS) in Flask applications, allowing you to control which domains can access your resources.
+
+**26. How can you schedule tasks in Flask?**
+    - Flask supports task scheduling through extensions like Celery. Celery can be used to run background tasks and periodic tasks in a Flask application.
+
+**27. What is the purpose of the `@app.teardown_request` decorator in Flask?**
+    - The `@app.teardown_request` decorator is used to register functions that will be called when a request context is popped, allowing you to perform cleanup tasks.
+
+**28. Explain the concept of Flask signals.**
+    - Flask signals are a way to allow application components to communicate with each other. They are used to send notifications when certain events occur in the application.
+
+**29. How does Flask handle URL converters?**
+    - Flask allows you to define custom URL converters by subclassing the `werkzeug.routing.BaseConverter` class. This can be useful for creating custom routing patterns.
+
+**30. What is Flask-Login used for?**
+    - Flask-Login is an extension that provides user session management for Flask applications, making it easy to implement user authentication and session management.
+
+**31. How can you perform database transactions in Flask-SQLAlchemy?**
+    - Flask-SQLAlchemy supports database transactions through the `db.session` object. 
+    You can use `db.session.commit()` to commit changes and `db.session.rollback()` to roll back changes.
+
+**32. Explain the role of the `__init__.py` file in a Flask application directory.**
+    - The `__init__.py` file in a Flask application directory serves as an indicator that the directory should be treated as a package. 
+    It allows you to organize your application into modules and import them as needed.
+
+**33. What is Flask-RESTful's Resource class used for?**
+    - Flask-RESTful's `Resource` class is used to define resources in a RESTful API. 
+    It provides methods like `get`, `post`, `put`, and `delete` that correspond to HTTP methods.
+
+**34. How can you configure Flask applications?**
+    - Flask applications can be configured using the `app.config` object. Configuration can be set in the code or through configuration files.
+
+**35. What is the purpose of Flask's `current_app` and `g` objects?**
+    - `current_app` is a proxy to the current application, and `g` is a global context variable. 
+    They are used to store and access data during the request-handling process.
+
+**36. How does Flask handle static files?**
+    - Flask handles static files by placing them in the `static` folder in the application directory. 
+    They can be accessed using the `/static` route.
+
+**37. What is the difference between Flask and Django?**
+    - Flask is a microframework that provides flexibility and simplicity, while Django is a full-stack web framework that includes an ORM, admin interface, and other components.
+
+**38. Explain the role of the `url_prefix` parameter in Flask blueprints.**
+    - The `url_prefix` parameter in Flask blueprints is used to add a prefix to all the routes defined in the blueprint. 
+    It helps in organizing routes under a common URL prefix.
+
+**39. How does Flask support internationalization (i18n)?**
+    - Flask supports internationalization through the Flask-Babel extension. 
+    It allows you to mark strings for translation and provides tools for managing translations.
+
+**40. What is Flask-Principal used for?**
+    - Flask-Principal is an extension that provides a simple way to manage identity and access control in Flask applications. 
+    It allows you to associate roles and permissions with users.
+
+**41. Explain Flask's `before_first_request` decorator.**
+    - The `before_first_request` decorator is used to register a function that will be executed only once, before the first request is handled. 
+    It is often used for initialization tasks.
+
+**42. How does Flask support unit testing?**
+    - Flask supports unit testing using the `unittest` or `pytest` frameworks. 
+    Test cases can be written to check the behavior of different parts of the application.
+
+**43. What is Flask-RESTPlus used for?**
+    - Flask-RESTPlus is an extension for Flask-RESTful that adds support for API documentation using Swagger. 
+    It simplifies the process of documenting and testing RESTful APIs.
+
+**44. Explain the use of Flask-Script.**
+    - Flask-Script is an extension that provides support for writing command-line scripts for Flask applications. 
+    It makes it easier to manage tasks such as database migrations and other command-line operations.
+
+**45. How does Flask handle request and response objects?**
+    - Flask uses the `request` and `response` objects to represent the incoming request and outgoing response, respectively. 
+    These objects provide access to various attributes and methods for handling HTTP requests and responses.
+
+**46. What is the Flask Application Factory pattern?**
+    - The Application Factory pattern is a design pattern in Flask where the application is created inside a function (the application factory) 
+    rather than at the module level. This allows for more flexible configuration and testing.
+
+**47. Explain Flask's `send_file` function.**
+    - The `send_file` function in Flask is used to send a file to the client as a response. 
+    It is often used to serve static files, like images or PDFs.
+
+**48. How can you use Flask to handle authentication?**
+    - Flask supports authentication using extensions like Flask-Login and Flask-Security. 
+    These extensions provide tools for managing user sessions, login/logout functionality, and user authentication.
+
+**49. What is Flask-RESTful's `reqparse` used for?**
+    - `reqparse` in Flask-RESTful is used to parse and validate request data, especially in the context of handling incoming JSON data in API endpoints.
+
+**50. How does Flask handle middleware?**
+    - Flask allows you to use middleware through the `before_request` and `after_request` decorators. 
+    Middleware functions can be registered to execute before or after each request, allowing for custom processing. 
+    Additionally, the `wraps` decorator can be used to wrap a view function with middleware-like behavior.
